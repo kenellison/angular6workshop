@@ -22,7 +22,7 @@
       </article>
     </li>
     <li class="col-4" *ngIf="afficherFormulaire">
-      <app-formulaire-produit></app-formulaire-produit>
+      <app-formulaire-produit (ajouterProduit)="onAjouterProduit($event)"></app-formulaire-produit>
     </li>
     <li class="col-4">
       <button *ngIf="!afficherFormulaire" (click)="afficherFormCreationProduit()">+</button>

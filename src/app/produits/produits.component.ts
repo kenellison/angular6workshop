@@ -11,12 +11,9 @@ export class ProduitsComponent implements OnInit {
   produits = PRODUITS;
   afficherFormulaire = false;
 
+
   constructor() {
-    this.produits.sort((a: Produit, b: Produit) => {
-      if (a.categorie < b.categorie) return -1;
-      else if (a.categorie > b.categorie) return 1;
-      else return 0;
-    });
+    this.trierProduits();
   }
 
   ngOnInit() {
@@ -32,6 +29,22 @@ export class ProduitsComponent implements OnInit {
 
   afficherFormCreationProduit() {
     this.afficherFormulaire = !this.afficherFormulaire;
+  }
+
+  onAjouterProduit(produit: Produit) {
+    console.log('produit ajouté a recuperer' + produit);
+    this.produits.push(produit);
+    this.trierProduits();
+    this.afficherFormulaire = !this.afficherFormulaire;
+
+  }
+
+  trierProduits() {
+    this.produits.sort((a: Produit, b: Produit) => {
+      if (a.categorie < b.categorie) return -1;
+      else if (a.categorie > b.categorie) return 1;
+      else return 0;
+    });
   }
 
 }
