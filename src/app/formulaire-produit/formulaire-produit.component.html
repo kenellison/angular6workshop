@@ -1,0 +1,24 @@
+<form [formGroup]="produitForm" (ngSubmit)="onEnregistrer()">
+<article class="tile form">
+  <div class="link-tile">
+    <div>
+      Nom
+      <input type="text" class="form-field" formControlName="nom">
+    </div>
+    <div>
+      Catégorie
+      <select class="form-field categorie">
+        <option *ngFor="let categorie of keys" [value]="categorie" [label]="categories[categorie]"></option>
+      </select>
+    </div>
+    <div class="quantite-restante">
+      Reste
+      <input class="form-field" formControlName="quantiteRestante">
+    </div>
+    <footer class="btn-container">
+      <button class="btn-enreg" (click)="enregistrer()">VAL</button>
+      <button class="btn-annuler" (click)="annuler()">X</button>
+    </footer>
+  </div>
+</article>
+</form>

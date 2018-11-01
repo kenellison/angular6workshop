@@ -1,0 +1,31 @@
+<div>
+  <h2>PRODUITS</h2>
+
+  <ul class="row">
+    <li *ngFor="let produit of produits" class="col-4">
+      <article class="tile">
+        <div class="link-tile">
+          <header class="header"><span>{{produit.nom}}</span></header>
+          <section class="quantites">
+            <div class="quantite-restante">
+              Reste
+              <span><input class="qte-rest" [(ngModel)]="produit.quantiteRestante"></span></div>
+            <div class="quantite-acheter">
+              Acheter
+              <span>{{produit.quantiteAAcheter}}</span>
+              <button (click)="ajouterProduitAAcheter(produit)">+</button>
+              <button (click)="enleverProduitAAcheter(produit)" *ngIf="produit.quantiteAAcheter > 0">-</button>
+            </div>
+          </section>
+          <footer class="footer"><span>Total = {{produit.quantiteRestante + produit.quantiteAAcheter}}</span></footer>
+        </div>
+      </article>
+    </li>
+    <li class="col-4" *ngIf="afficherFormulaire">
+      <app-formulaire-produit></app-formulaire-produit>
+    </li>
+    <li class="col-4">
+      <button *ngIf="!afficherFormulaire" (click)="afficherFormCreationProduit()">+</button>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,54 @@
+.form-nom {
+  display: table;
+}
+
+.tile.form {
+  margin-top: 20px;
+}
+
+.btn-container {
+  margin: 0;
+  padding-top: 15px;
+  padding-right: 30px;
+}
+
+.btn-annuler {
+  float:left;
+  width:50%;
+  overflow:hidden;
+}
+
+.btn-enreg {
+  float:left;
+  width:50%;
+  overflow:hidden;
+  text-align: center;
+  background-color: lightgreen;
+}
+
+.btn-enreg:hover {
+  background-color: mediumseagreen;
+}
+
+.btn-annuler:hover {
+  background-color: lightgrey;
+}
+
+.qte-rest {
+  width: 20%;
+  display: table;
+}
+
+.form-field {
+  display: table;
+  margin-bottom: 8px;
+}
+
+.quantite-restante input {
+  width: 20%;
+}
+
+.form-field.categorie {
+  width: 85%;
+  height: 26px;
+}
